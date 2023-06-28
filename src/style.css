@@ -14,10 +14,10 @@ body {
 
 h1 { 
     font-family:"Game of Thrones";
-    color: white;
+    color: rgba(0, 0, 0, 0.822);
     font-size: 75px;
     text-align: center;
-    text-shadow: 10px 10px 30px black  
+    text-shadow: 5px 5px 30px #e6c58b;  
 }
 
 .container {
@@ -42,4 +42,63 @@ img {
     height: 250px;
 }
 
+/* {
+    /*box-sizing: border-box;*/
 
+
+.container_menu {
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: center;*/
+    /*margin: 0px 135px 15px 135px;*/
+    box-sizing: border-box;
+      
+}
+
+.item_menu{
+    /*display: flex;
+    padding: 10px;
+    
+    flex-wrap: wrap;
+    display: inline-block;*/
+    flex: 15%;
+    /*margin: 0px 40px;*/
+    /*padding: 10px;*/
+    /*box-sizing: border-box;*/
+    text-align: center;
+        
+}
+
+/*.filtros {
+    display: flex;
+    flex-wrap: wrap;   
+      
+}
+ 
+.filtros button {
+    margin: 0px 60px;
+    
+}*/
+@media (max-width: 800px){ 
+    .item_menu {
+    flex: 100%;
+    }
+    
+}
+.item_menu button, input {
+    width: 65%;
+    text-align: center;
+    font-size: medium;
+    background-color: #e6c58b;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border: none; 
+    border-radius: 20px;
+    margin-bottom: 30px; 
+    
+}
+
+.input_placeholder::placeholder{
+    color: rgb(0, 0, 0);
+    font-weight: bold
+}
