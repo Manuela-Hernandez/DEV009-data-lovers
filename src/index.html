@@ -2,15 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h2>GOT 1234</h2>
-    <div id="root"></div>
-    <section>
-      <p>Hola</p>
-    </section>
+    <header>
+      <div>
+       <h1>GAME OF THRONES</h1>
+      </div>
+      <div class="container_menu">   
+        <div class="item_menu">     
+          <input type="text" name="buscar" id="buscar" class="input_placeholder" placeholder="Buscar por nombre"> 
+        </div>
+        <div class="item_menu">
+          <button type="button" id="primer_filtro">Filtrar por familia</button>
+        </div>
+        <div class="item_menu">
+          <button type="button" id="ordenar">Ordenar</button>
+        </div>
+        <div class="item_menu">
+          <button type="button" id="estadistica">Estadistica</button>
+        </div>
+          
+        
+      </div>
+    </header>
+    <main>
+      <div id= "container" class= "container">
+        <!-- <div class= "personaje">
+          <p>Daenerys Targaryen</p>
+          <img src= "https://thronesapi.com/assets/images/daenerys.jpg">
+        </div> -->
+      </div>
+    </main>
     <script src="main.js" type="module"></script>
   </body>
 </html>
