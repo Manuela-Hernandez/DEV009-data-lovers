@@ -6,8 +6,8 @@ console.log(example, data);
 
 // manipulacion del DOM
 
-function dibujarPersonajes () {
-  data["got"].forEach(element => {
+/* //function dibujarPersonajes () {
+  data["got"].forEach(element => { 
     const newDiv = document.createElement("div");
     newDiv.classList.add("personaje");
     const container = document.getElementById("container");
@@ -24,4 +24,4 @@ function dibujarPersonajes () {
        
   });
 }
-dibujarPersonajes()
+dibujarPersonajes() */
