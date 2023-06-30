@@ -1,8 +1,13 @@
-import { example } from './data.js';
-
 import data from './data/got/got.js';
+import { 
+  familyFilter, 
+  sortCharactersAscendente
+  
+} from './data.js';
 
-(example, data);
+
+
+//(example, data);
 
 // manipulacion del DOM
 
@@ -42,4 +47,31 @@ function createElement (elementType, classCss, container) {
 }
 
 // eventos.js
+
+const selectores = document.getElementById("alphabetical");
+selectores.addEventListener("change", () => {
+  //llamamos al change para lea cuando el usurio cambia de opcion en el selector del dom
+  const opciones = selectores.value; //obtenemos el valor del select
+  const newDataOrder = sortCharactersAscendente(data.got);
+  //console.log(sortCharactersAscendente(data.characters));
+  if (opciones == "ascendente") {
+    dibujarPersonajes(newDataOrder);
+  } else if (opciones == "descendente") {
+    dibujarPersonajes(newDataOrder.reverse());
+  } else {
+    dibujarPersonajes(data.got); //funcion principal del llamado a los personajes establecida en Linea 5 del main.
+  }
+});
+
+const select1 = document.getElementById("family_filter");
+select1.addEventListener("change", (e) => {
+  const family = e.target.value;
+  const arrfamilias = familyFilter(data.got, family);
+  dibujarPersonajes(arrfamilias);
+  if (family === "Filtrar por") {
+    dibujarPersonajes(data.got); 
+    
+    console.log(arrfamilias);
+  }
+});
 
