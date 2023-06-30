@@ -2,7 +2,7 @@ import { example } from './data.js';
 
 import data from './data/got/got.js';
 
-console.log(example, data);
+(example, data);
 
 // manipulacion del DOM
 
@@ -32,9 +32,31 @@ function dibujarPersonajes () {
     divCardFront.appendChild(newImg);
 
     //se agrega texto al divCardFront
-    const newContent = document.createTextNode("h3");
-    newContent.textContent = element["fullName"];
-    divCardFront.appendChild(newContent);
+    const titleCardFront = document.createElement("h3");
+    titleCardFront.textContent = element["fullName"];
+    divCardFront.appendChild(titleCardFront);
+
+    //se crea div se agrega clase card_back y se agrega al divCharacter
+    const divCardBack = document.createElement("div");
+    divCardBack.classList.add("card_back");
+    divCharacter.appendChild(divCardBack)
+    
+    //se agrega titulo al divCardBack
+    const titleCardBack = document.createElement("h3");
+    titleCardBack.textContent = element["fullName"];
+    divCardBack.appendChild(titleCardBack);
+
+    const infoCardBack1 = document.createElement("p");
+    infoCardBack1.textContent = element["title"];
+    divCardBack.appendChild(infoCardBack1);
+    
+    const infoCardBack2 = document.createElement("p");
+    infoCardBack2.textContent = element["family"];
+    divCardBack.appendChild(infoCardBack2);
+
+    const infoCardBack3 = document.createElement("p");
+    infoCardBack3.textContent = element["born"];
+    divCardBack.appendChild(infoCardBack3);
 
        
   });
