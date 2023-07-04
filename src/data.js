@@ -1,16 +1,23 @@
-// estas funciones son de ejemplo
+//funcion de filtrar y ordenar
 
-export const example = () => {
-  return 'example';
+export const filterFamily = (family, arrdata) => {
+  const filter1 = (i) => {
+    if (i["family"] === family ) {
+      return true;
+    } else{
+      return false;
+    }
+
+  }
+  const filtro1 = arrdata.filter(filter1)
+  return filtro1;
 };
 
 export const anotherExample = () => {
   return 'OMG';
 };
 
-//funcion de filtrar y ordenar
-
-export const sortCharactersAscendente = (got) => { 
+/* export const sortCharactersAscendente = (got) => { 
   if(got === ''){ //linea 8 a 10 para usar en el test sin argumento
     return false
   }
@@ -28,12 +35,4 @@ export const sortCharactersAscendente = (got) => {
   });
   return dataorder;
 };
-
-
-export function familyFilter(got, family)  { 
-  if(family === ''){ 
-    return false    
-  }
-  const filtro = got.filter(item => item.lastName === family); 
-  return filtro; 
-};
+ */
