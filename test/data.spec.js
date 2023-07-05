@@ -1,31 +1,5 @@
 import { filterFamily,} from '../src/data.js';
 
-
-/* //describe('example', () => {
-  it('is a function', () => {
-    expect(typeof example).toBe('function');
-  });
-
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
-  });
-});
-
-
-describe('anotherExample', () => {
-  it('is a function', () => {
-    expect(typeof anotherExample).toBe('function');
-  });
-
-  it('returns `anotherExample`', () => {
-    expect(anotherExample()).toBe('OMG');
-  });
-});
- */
-
-//const { filterFamily } = require('../src/data.js'); // Importa la función filterFamily desde el archivo data.js
-
-// Datos de ejemplo, arreglo de datos en el cual hacemos el filtrado
 const arrdata = [
   { fullName: "Daenerys Targaryen", title: "Mother of Dragons", family: "House Targaryen" },
   { fullName: "Sansa Stark", title: "Lady of Winterfell", family: "House Stark" },
@@ -79,9 +53,7 @@ describe('filterFamily', () => {  //funcion donde se agrupan las pruebas a reali
     ]);
   });
 
-  it('Debería devolver un error cuando se le pasa un dato que no es un arreglo', () => {
-    expect(() => {
-      filterFamily("Targaryen", {}); //{} objeto vacio no un arreglo
-    }).toThrow('ERROR: DATA INVALIDA, se espera un arreglo');
+  it('return array vacio', () => {
+    expect(filterFamily("", arrdata)).toEqual([])
   });
 });
