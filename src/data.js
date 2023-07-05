@@ -38,10 +38,6 @@ export const anotherExample = () => {
  */
 
 export const filterFamily = (family, arrdata) => {
-  if (!Array.isArray(arrdata)) {
-    throw new Error('ERROR: DATA INVALIDA, se espera un arreglo');
-  }
-
   const filter1 = (i) => {
     if (i["family"] === family) {
       return true;
