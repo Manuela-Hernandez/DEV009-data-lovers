@@ -1,6 +1,6 @@
 //funcion de filtrar y ordenar
 
-export const filterFamily = (family, arrdata) => {
+/* //export const filterFamily = (family, arrdata) => {
   const filter1 = (i) => {
     if (i["family"] === family ) {
       return true;
@@ -16,7 +16,7 @@ export const filterFamily = (family, arrdata) => {
 export const anotherExample = () => {
   return 'OMG';
 };
-
+ */
 /* export const sortCharactersAscendente = (got) => { 
   if(got === ''){ //linea 8 a 10 para usar en el test sin argumento
     return false
@@ -36,3 +36,20 @@ export const anotherExample = () => {
   return dataorder;
 };
  */
+
+export const filterFamily = (family, arrdata) => {
+  if (!Array.isArray(arrdata)) {
+    throw new Error('ERROR: DATA INVALIDA, se espera un arreglo');
+  }
+
+  const filter1 = (i) => {
+    if (i["family"] === family) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  const filtro1 = arrdata.filter(filter1);
+  return filtro1;
+};
