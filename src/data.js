@@ -1,41 +1,4 @@
-//funcion de filtrar y ordenar
-
-/* //export const filterFamily = (family, arrdata) => {
-  const filter1 = (i) => {
-    if (i["family"] === family ) {
-      return true;
-    } else{
-      return false;
-    }
-
-  }
-  const filtro1 = arrdata.filter(filter1)
-  return filtro1;
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
- */
-/* export const sortCharactersAscendente = (got) => { 
-  if(got === ''){ //linea 8 a 10 para usar en el test sin argumento
-    return false
-  }
-
-  //con esta función sort nos ordena el array y lo devuelve ordenado 
-  const dataorder = got.sort((a, b) => {
-    
-    if (a.name < b.name) {//orden alfabetico de A-Z
-      return -1;
-    }
-    if (a.name > b.name) {//orden al de Z-A
-      return 1;
-    }
-    return 0;
-  });
-  return dataorder;
-};
- */
+//funcion de filtrar 
 
 export const filterFamily = (family, arrdata) => {
   const filter1 = (i) => {
@@ -44,8 +7,30 @@ export const filterFamily = (family, arrdata) => {
     } else {
       return false;
     }
-  };
 
-  const filtro1 = arrdata.filter(filter1);
+  }
+  const filtro1 = arrdata.filter(filter1)
   return filtro1;
 };
+
+//Funcion de ordenar
+export const sortAz = (data, sortType) => {
+  const sortedDate = data.slice().sort((a, b) => {
+    const fullNameA = a.fullName;
+    const fullNameB = b.fullName;
+    if (fullNameA < fullNameB) {
+      return -1;
+    } else {
+      return 1;
+    }
+
+  })
+  if (sortType === "AZ") {
+    return sortedDate
+  } else {
+    return sortedDate.reverse()
+  }
+};
+
+
+
