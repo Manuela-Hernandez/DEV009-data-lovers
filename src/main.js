@@ -1,4 +1,4 @@
-import { filterFamily, sortAz } from './data.js';
+import { filterFamily, contarPersonajesFamilia, sortAz } from './data.js';
 import data from './data/got/got.js';
 
 
@@ -45,10 +45,12 @@ function createCharacter(element) {
 }
 
 const selectFamily = document.getElementById("family_filter")
+const mensaje = document.getElementById("resultado_contador")
 selectFamily.addEventListener("change", function () {
   const family = selectFamily.value;
   const familiafiltrada = filterFamily(family, data["got"]);
   document.querySelector(".container_main").innerHTML = '';
+  mensaje.innerHTML = "Hay " + contarPersonajesFamilia (familiafiltrada);
   if (family !== "") {
     dibujarPersonajes(familiafiltrada);
 

@@ -13,6 +13,12 @@ export const filterFamily = (family, arrdata) => {
   return filtro1;
 };
 
+//Contar personajes
+export const contarPersonajesFamilia = (personajes) => { 
+  const personajesContados = personajes.length; 
+  return personajesContados; 
+}
+
 //Funcion de ordenar
 export const sortAz = (data, sortType) => {
   const sortedDate = data.slice().sort((a, b) => {
