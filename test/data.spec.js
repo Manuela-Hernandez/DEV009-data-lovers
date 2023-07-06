@@ -1,4 +1,4 @@
-import { filterFamily,} from '../src/data.js';
+import { filterFamily, sortAz} from '../src/data.js';
 
 const arrdata = [
   { fullName: "Daenerys Targaryen", title: "Mother of Dragons", family: "House Targaryen" },
@@ -55,5 +55,80 @@ describe('filterFamily', () => {  //funcion donde se agrupan las pruebas a reali
 
   it('return array vacio', () => {
     expect(filterFamily("", arrdata)).toEqual([])
+  });
+});
+
+describe('sortAz', () => {
+  const data = [
+    {
+      id: 35,
+      fullName: "Ramsey Bolton",
+      family: "Bolton",
+    },
+    {
+      id: 0,
+      fullName: "Daenerys Targaryen",
+      family: "House Targaryen",
+    },
+    {
+      id: 6,
+      fullName: "Ned Stark",
+      family: "House Stark",
+    },
+    
+  ];
+  
+  it('is a function', () => {
+    expect(typeof sortAz).toBe('function');
+  });
+
+  it('returns los personajes ordenados ascendente', () => {
+    const result1= [
+      {
+        id: 0,
+        fullName: "Daenerys Targaryen",
+        family: "House Targaryen",
+      },
+
+      {
+        id: 6,
+        fullName: "Ned Stark",
+        family: "House Stark",
+      },
+      {
+        id: 35,
+        fullName: "Ramsey Bolton",
+        family: "Bolton",
+      },
+    ];
+    expect(sortAz(data, "AZ" )).toEqual(result1);
+  });
+
+  it('returns personajes ordenados descendente', () => {
+    const result2 = [
+      {
+        id: 35,
+        fullName: "Ramsey Bolton",
+        family: "Bolton",
+      },
+      {
+        id: 6,
+        fullName: "Ned Stark",
+        family: "House Stark",
+      },
+      {
+        id: 0,
+        fullName: "Daenerys Targaryen",
+        family: "House Targaryen",
+      },
+
+    ];
+    expect(sortAz(data, "ZA" )).toEqual(result2);
+  });
+
+  
+  it('return array vacio', () => {
+    expect(sortAz(data, "")).toEqual(false)
+    console.log (data);
   });
 });

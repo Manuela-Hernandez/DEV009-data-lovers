@@ -25,6 +25,10 @@ export const sortAz = (data, sortType) => {
     }
 
   })
+
+  if(sortType === ""){ 
+    return false
+  } 
   if (sortType === "AZ") {
     return sortedDate
   } else {
