@@ -1,4 +1,4 @@
-import { filterFamily, contarPersonajesFamilia, sortAz } from './data.js';
+import { filterFamily, contarPersonajesFamilia, sortAz, buscarPersonajes} from './data.js';
 import data from './data/got/got.js';
 
 
@@ -88,3 +88,15 @@ selectOrder.addEventListener("change", function () {
    
 
 });
+
+const searchInput = document.getElementById("buscar");
+searchInput.addEventListener("input", function () {
+  const searchValue = searchInput.value.toLowerCase();
+  const resultadosBusqueda = buscarPersonajes(searchValue, familiafiltrada);
+  document.querySelector(".container_main").innerHTML = '';
+  dibujarPersonajes(resultadosBusqueda);
+  mensaje.innerHTML = "Hay " + contarPersonajesFamilia(resultadosBusqueda) + " personajes";
+
+});
+
+
