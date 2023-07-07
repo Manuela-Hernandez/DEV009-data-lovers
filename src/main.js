@@ -77,7 +77,7 @@ selectOrder.addEventListener("change", function () {
     dibujarPersonajes(familiafiltrada);
   } else {
     let personajesOrdenados = []
-    if (family == "all") {
+    if (family === "all") {
       personajesOrdenados = sortAz(data["got"], sortType);
 
     } else {
