@@ -1,4 +1,4 @@
-import { filterFamily, sortAz} from '../src/data.js';
+import { filterFamily, sortAz, contarPersonajesFamilia} from '../src/data.js';
 
 const arrdata = [
   { fullName: "Daenerys Targaryen", title: "Mother of Dragons", family: "House Targaryen" },
@@ -131,4 +131,71 @@ describe('sortAz', () => {
     expect(sortAz(data, "")).toEqual(false)
     console.log (data);
   });
+});
+
+describe('contarPersonajesFamilia', () => {
+  const data = [
+    {
+      id: 0,
+      fullName: "Daenerys Targaryen",
+      family: "House Targaryen",
+    },
+
+    {
+      id: 20,
+      fullName: "Khal Drogo",
+      family: "House Targaryen",
+    },
+    {
+      id: 26,      
+      fullName: "Viserys Targaryn",
+      family: "House Targaryen"
+    }
+  ];
+  
+  it('is a function', () => {
+    expect(typeof contarPersonajesFamilia).toBe('function');
+  });
+
+  it('contar personajes de la familia targaryen', () => {
+    const contar1= 3;
+    expect(contarPersonajesFamilia(data,"House Targaryen")).toBe(contar1);
+  });
+
+});
+
+describe('contarPersonajesFamilia', () => {
+  const data = [
+    {
+      id: 8,
+      fullName: "Jamie Lannister",
+      family: "House Lannister",
+      
+    },
+
+    {
+      id: 9,     
+      fullName: "Cersei Lannister",
+      family: "House Lannister",
+     
+    },
+    {
+      id: 14,
+      fullName: "Tyrion Lannister",
+      family: "House Lannister",
+    },
+    {
+      id: 42,
+      fullName: "Tywin Lannister",
+      family: "House Lannister",
+    }
+
+  ];
+  
+  
+  it('contar personajes de la familia lannister', () => {
+    const contar1= 4;
+    expect(contarPersonajesFamilia(data,"House Lannister")).toBe(contar1);
+  });
+
 });
