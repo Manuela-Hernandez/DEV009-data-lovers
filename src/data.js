@@ -42,5 +42,10 @@ export const sortAz = (data, sortType) => {
   }
 };
 
-
+export function buscarPersonajes(searchValue, data) {
+  return data.filter(function (character) {
+    const fullNameLowerCase = character.fullName.toLowerCase();
+    return fullNameLowerCase.indexOf(searchValue) === 0;
+  });
+}
 

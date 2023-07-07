@@ -129,7 +129,7 @@ describe('sortAz', () => {
   
   it('return array vacio', () => {
     expect(sortAz(data, "")).toEqual(false)
-    console.log (data);
+    
   });
 });
 
