@@ -11,6 +11,9 @@ function dibujarPersonajes(datos) {
   });
 }
 dibujarPersonajes(data["got"])
+const mensaje = document.getElementById("mensaje");
+mensaje.innerHTML = "Hay " + contarPersonajesFamilia(data["got"]) + " personajes";
+
 
 
 function createElement(elementType, classCss, container) {
@@ -44,48 +47,44 @@ function createCharacter(element) {
 
 }
 
-const selectFamily = document.getElementById("family_filter");
-const mainElement = document.querySelector("main");
+let familiafiltrada = data["got"];
 
+const selectFamily = document.getElementById("family_filter");
 selectFamily.addEventListener("change", function () {
   const family = selectFamily.value;
-  let familiafiltrada;
-
-  if (family === "all") {
-    familiafiltrada = data["got"];
-  } else {
+  document.querySelector(".container_main").innerHTML = '';
+  
+  if (family !== "all") {
     familiafiltrada = filterFamily(family, data["got"]);
+    dibujarPersonajes(familiafiltrada);
+    mensaje.innerHTML = "Hay " + contarPersonajesFamilia(familiafiltrada) + " personajes";
+  } else {
+    familiafiltrada = data["got"];
+    dibujarPersonajes(data["got"]);
+    mensaje.innerHTML = "Hay " + contarPersonajesFamilia(data["got"]) + " personajes";
   }
 
-  mainElement.innerHTML = '';
-
-  const mensajeDiv = document.createElement("div");
-  mensajeDiv.classList.add("mensaje");
-  mensajeDiv.textContent = "Total personajes " + contarPersonajesFamilia(familiafiltrada);
-
-  mainElement.appendChild(mensajeDiv);
-
-  dibujarPersonajes(familiafiltrada, mainElement);
 });
-
-
 
 
 const selectOrder = document.getElementById("alphabetical")
 selectOrder.addEventListener("change", function () {
   const sortType = selectOrder.value;
-  const sortName = sortAz(data["got"], sortType);
+  const family = selectFamily.value;
   
   document.querySelector(".container_main").innerHTML = '';
   if (sortType === "all") {
-    dibujarPersonajes(data["got"]);
-  }
-  if (sortType === "AZ") {
-    dibujarPersonajes(sortName);
+    dibujarPersonajes(familiafiltrada);
+  } else {
+    let personajesOrdenados = []
+    if (family == "all") {
+      personajesOrdenados = sortAz(data["got"], sortType);
 
-  } else if (sortType === "ZA") {
-    dibujarPersonajes(sortName);
+    } else {
+      personajesOrdenados = sortAz(familiafiltrada, sortType);
+    }
+    dibujarPersonajes(personajesOrdenados);
   }
+   
 
 });
-

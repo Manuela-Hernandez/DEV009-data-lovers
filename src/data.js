@@ -17,7 +17,7 @@ export const filterFamily = (family, arrdata) => {
 export const contarPersonajesFamilia = (personajes) => { 
   const personajesContados = personajes.length; 
   return personajesContados; 
-}
+};
 
 //Funcion de ordenar
 export const sortAz = (data, sortType) => {
