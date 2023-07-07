@@ -44,30 +44,38 @@ function createCharacter(element) {
 
 }
 
-const selectFamily = document.getElementById("family_filter")
-const mensaje = document.getElementById("resultado_contador")
+const selectFamily = document.getElementById("family_filter");
+const mainElement = document.querySelector("main");
+
 selectFamily.addEventListener("change", function () {
   const family = selectFamily.value;
-  const familiafiltrada = filterFamily(family, data["got"]);
-  document.querySelector(".container_main").innerHTML = '';
-  mensaje.innerHTML = "Hay " + contarPersonajesFamilia (familiafiltrada);
-  if (family !== "") {
-    dibujarPersonajes(familiafiltrada);
+  let familiafiltrada;
 
+  if (family === "all") {
+    familiafiltrada = data["got"];
   } else {
-    dibujarPersonajes(data["got"]);
-
+    familiafiltrada = filterFamily(family, data["got"]);
   }
 
+  mainElement.innerHTML = '';
+
+  const mensajeDiv = document.createElement("div");
+  mensajeDiv.classList.add("mensaje");
+  mensajeDiv.textContent = "Total personajes " + contarPersonajesFamilia(familiafiltrada);
+
+  mainElement.appendChild(mensajeDiv);
+
+  dibujarPersonajes(familiafiltrada, mainElement);
 });
+
+
+
 
 const selectOrder = document.getElementById("alphabetical")
 selectOrder.addEventListener("change", function () {
   const sortType = selectOrder.value;
-  console.log(sortType);
   const sortName = sortAz(data["got"], sortType);
-  console.log(sortName);
-
+  
   document.querySelector(".container_main").innerHTML = '';
   if (sortType === "all") {
     dibujarPersonajes(data["got"]);
