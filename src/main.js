@@ -53,7 +53,7 @@ const selectFamily = document.getElementById("family_filter");
 selectFamily.addEventListener("change", function () {
   const family = selectFamily.value;
   document.querySelector(".container_main").innerHTML = '';
-  
+  searchInput.value=""
   if (family !== "all") {
     familiafiltrada = filterFamily(family, data["got"]);
     dibujarPersonajes(familiafiltrada);
@@ -71,7 +71,7 @@ const selectOrder = document.getElementById("alphabetical")
 selectOrder.addEventListener("change", function () {
   const sortType = selectOrder.value;
   const family = selectFamily.value;
-  
+  searchInput.value=""
   document.querySelector(".container_main").innerHTML = '';
   if (sortType === "all") {
     dibujarPersonajes(familiafiltrada);
