@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Data Lovers</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+       <h1>GAME OF THRONES</h1>
+      </div>
+      <div class="container_menu">   
+        <div class="item_menu">
+          <button type="button" id="home">Home</button>
+        </div>
+        <div class="item_menu">     
+          <input type="search" name="buscar" id="buscar" class="input_placeholder" placeholder="Buscar por nombre"> 
+        </div>
+        <div class="item_menu">
+         <select name="" id="family_filter"> 
+            <option value="all">Todas las familias</option>
+            <option value="House Baratheon">Baratheon</option>
+            <option value="House Lannister">Lannister</option>
+            <option value="House Stark">Stark</option>
+            <option value="House Targaryen">Targaryen</option>
+            <option value="House Clegane">Clegane</option>
+            <option value="House Tyrell">Tyrell</option>
+            <option value="House Greyjoy">Greyjoy</option>
+            <option value="House Baelish">Baelish</option>
+            <option value="House Seaworth">Seaworth</option>
+            <option value="Free Folk">Free Folk</option>
+            <option value="Bolton">Bolton</option>
+            <option value="House Tarly">Tarly</option>
+            <option value="Mormont">Mormont</option>
+          </select>
+        </div>
+
+        <div class="item_menu">
+          <select id="alphabetical" name="select">
+            <option value="all" selected>Ordenar</option>
+            <option value="AZ">A-Z</option>
+            <option value="ZA">Z-A</option>
+          </select>
+        </div>
+        
+          
+        <div id="selectContainer"></div>
+      </div>
+    </header>
+    <div id="div_mensaje">
+      <p id="mensaje"></p>
+    </div>
+    <main class= "container_main" id= "container_main">
+    </main>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
