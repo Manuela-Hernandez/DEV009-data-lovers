@@ -1,4 +1,4 @@
-import { filterFamily, sortAz, contarPersonajesFamilia} from '../src/data.js';
+import { filterFamily, sortAz, contarPersonajesFamilia, buscarPersonajes} from '../src/data.js';
 
 const arrdata = [
   { fullName: "Daenerys Targaryen", title: "Mother of Dragons", family: "House Targaryen" },
@@ -199,3 +199,49 @@ describe('contarPersonajesFamilia', () => {
   });
 
 });
+
+const data =  [
+  {
+    id: 21,
+    fullName: "Margaery Tyrell",
+    family: "House Tyrell",   
+  },
+
+  {
+    id: 24,
+    fullName: "Missandei",
+    family: "Naathi",
+  },
+
+  {
+    id: 40,
+    fullName: "Melisandre",
+    family: "Unknown",
+  }
+
+]
+
+describe('buscarPersonajes', () => {
+  it('Debería filtrar los personajes por el texto ingresado', () => {
+    const searchData = buscarPersonajes("m", data);
+    const expectedData = [
+      {
+        id: 21,
+        fullName: "Margaery Tyrell",
+        family: "House Tyrell",
+      },
+      {
+        id: 24,
+        fullName: "Missandei",
+        family: "Naathi",
+      },
+      {
+        id: 40,
+        fullName: "Melisandre",
+        family: "Unknown",
+      },
+    ];
+    expect(searchData).toEqual(expectedData);
+  });
+});
+
