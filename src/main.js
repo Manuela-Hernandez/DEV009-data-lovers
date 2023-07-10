@@ -99,4 +99,8 @@ searchInput.addEventListener("input", function () {
 
 });
 
+const buttonHome = document.getElementById ("home")
+buttonHome.addEventListener("click", function() {
+  location.reload()
 
+})

@@ -120,7 +120,7 @@ img{
     
 
 .item_menu button, input, select {
-    width: 75%;
+    width: 92%;
     text-align: center;
     font-size: 22px;
     background-color: #e6c58b;
@@ -146,3 +146,4 @@ img{
     font-weight: bold;
     box-shadow: 0 5px 10px #000; 
 }
+
