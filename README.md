@@ -172,6 +172,9 @@ Realizamos test de usabilidad desde los prototipos para las tres primeras histor
 ![resultado](src/Imagenes/resultado.JPG)
 Teniendo en cuenta los resultados del test de usabilidad, se llego a la conclusion de que era necesario un boton que reestableciera valores en la pagina. 
 
+## Interfaz
+-[Interfaz](https://manuela-hernandez.github.io/DEV009-data-lovers/src/) para difetentes dispositivos
+
 ## Desarrolladoras
 
 - [@LauraJoya19](https://github.com/LauraJoya19) 

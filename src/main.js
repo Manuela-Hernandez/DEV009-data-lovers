@@ -8,6 +8,7 @@ function dibujarPersonajes(datos) {
   datos.forEach(element => {
     createCharacter(element)
 
+
   });
 }
 dibujarPersonajes(data["got"])
@@ -46,6 +47,55 @@ function createCharacter(element) {
   infoCardBack3.textContent = element["born"];
 
 }
+/* //crear select 
+function crearSelect (tipoElemento, classCss, atributo, texto ) {
+const elementSelect = document.characterSet(tipoElemento);
+  if (classCss !== "") {
+    elementSelect.classList.add(classCss);
+  }
+
+  container.appendChild(element);
+
+  return element;
+}
+
+function selectFamily () {
+  crearSelect
+
+} */
+
+function select () {
+  const containerMain = document.querySelector(".container_main");
+  let select = document.createElement("select");
+
+  let option1 = document.createElement("option");
+  option1.setAttribute("value", "value1");
+  let option1Texto = document.createTextNode("opcion 1");
+  option1.appendChild(option1Texto);
+
+  let option2 = document.createElement("option");
+  option2.setAttribute("value", "value2");
+  let option2Texto = document.createTextNode("opcion 2");
+  option2.appendChild(option2Texto);
+
+  let option3 = document.createElement("option");
+  option3.setAttribute("value", "value3");
+  let option3Texto = document.createTextNode("opcion 3");
+  option3.appendChild(option3Texto);
+
+  select.appendChild(option1);
+  select.appendChild(option2);
+  select.appendChild(option3);
+
+  containerMain.appendChild(select);
+   
+}
+
+
+
+
+
+
 
 let familiafiltrada = data["got"];
 
