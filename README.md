@@ -190,8 +190,16 @@ uno.
 - ### Version movil
 
 
+https://github.com/LauraJoya19/DEV009-data-lovers/assets/133243351/88233cc5-904b-4508-903c-a02b30c7fe09
+
+
+
 
 - ### Version Desktop
+
+
+https://github.com/LauraJoya19/DEV009-data-lovers/assets/133243351/b2dbd032-977b-41a7-9ab8-dde50ea86b4c
+
 
 
 ### 5.2 Test de usabilidad interfaz
