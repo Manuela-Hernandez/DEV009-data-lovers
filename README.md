@@ -6,7 +6,7 @@
 * [2. Herramientas utilizadas.](#2-herramientas-utilizadas)
 * [3. Historias de usuario.](#3-historias-de-usuario)
 * [4. Prototipos.](#4-prototipos)
-* [5. Test de usabilidad.](#5-test-de-usabilidad)
+* [5. Interfaz.](#5-interfaz)
 
 ## 1. Definición del producto.
 
@@ -117,7 +117,8 @@ la interfaz y por qué?**
   ### 3.4 Cuarta historia de usuario
     
   - **Yo como**: Usuario de la pagina y fan de GOT.
-  - **Quiero**: al usar el filtro me aparezca la suma de los personajes.
+  - **Quiero**: al usar el filtro me aparezca la suma de los 
+  personajes.
   - **Para**: saber la cantidad de personajes por familia.
 
   **Criterios de aceptacion**: 
@@ -160,20 +161,45 @@ la interfaz y por qué?**
 ## 4. Prototipos.
 
 - **Prototipo de baja fidelidad**
-Realizamos prototipo de baja fidelidad en [Figma](https://www.figma.com/file/ORBg4sqpJGma5nz1g8rByV/Baja-Fidelidad?type=design&node-id=0-1&mode=design&t=ql3BblygxMm7PGqw-0) para diferentes dispositivos. 
+Realizamos prototipo de baja fidelidad en [Figma](https://www.figma.com/file/ORBg4sqpJGma5nz1g8rByV/Baja-Fidelidad?type=design&node-id=0-1&mode=design&t=ql3BblygxMm7PGqw-0) 
+para diferentes dispositivos. 
 ![prototipo de baja](src/Imagenes/Prototipo%20de%20baja.jpeg) 
 - **Prototipo de alta fidelidad**
 Realizamos prototipo de alta fidelidad en [Figma](https://www.figma.com/file/sJ1DGDqS5wBH9yooxShePZ/Prototipo-alta-fidelidad?type=design&node-id=0-1&mode=design&t=2jvXFrKOsDLtDPpd-0) para difetentes dispositivos
 ![prototipo de alta](src/Imagenes/Prototipos%20de%20alta.JPG)
 
-## 5. Test de usabilidad.
-
-Realizamos test de usabilidad desde los prototipos para las tres primeras historias de usuario y estos fueron los resultados:
+### 4.1 . Test de usabilidad.
+Realizamos test de usabilidad desde los prototipos para las 
+tres primeras historias de usuario y estos fueron los 
+resultados:
 ![resultado](src/Imagenes/resultado.JPG)
-Teniendo en cuenta los resultados del test de usabilidad, se llego a la conclusion de que era necesario un boton que reestableciera valores en la pagina. 
+Teniendo en cuenta los resultados del test de usabilidad, se 
+llego a la conclusion de que era necesario un boton que 
+reestableciera valores en la pagina. 
 
-## Interfaz
--[Interfaz](https://manuela-hernandez.github.io/DEV009-data-lovers/src/) para difetentes dispositivos
+
+## 5. Interfaz.
+En la interfaz, el usuario puede interactuar con los 
+diferentes botones donde reestablece valores, busca los 
+personajes por nombre, filtra por familia y ordena 
+alfabeticamente los datos adicional encuentra la informacion 
+de cada personaje al pasar el cursor por la imagen de cada 
+uno. 
+[Aqui](https://manuela-hernandez.github.io/DEV009-data-lovers/src/) puedes acceder a la interfaz.
+
+- ### Version movil
+
+
+
+- ### Version Desktop
+
+
+### 5.2 Test de usabilidad interfaz
+Una vez nuestros usuarios interactuaron en la interfaz, 
+hicieron el test el cual dio como resultado que la interfaz 
+es util y satisfactoria.
+![resultado2](src/Imagenes/resp%20final.JPG)
+![resultado3](src/Imagenes/respuesta%20final.JPG)
 
 ## Desarrolladoras
 
