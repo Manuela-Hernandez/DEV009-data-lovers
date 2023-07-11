@@ -114,7 +114,6 @@ img{
 @media (max-width: 1000px){ 
     .item_menu {
     flex: 100%;
-    text-align: center;
     }
 }
 
