@@ -1,5 +1,4 @@
 //funcion de filtrar 
-
 export const filterFamily = (family, arrdata) => {
   const filter1 = (i) => {
     if (i["family"] === family) {
@@ -14,9 +13,9 @@ export const filterFamily = (family, arrdata) => {
 };
 
 //Contar personajes
-export const contarPersonajesFamilia = (personajes) => { 
-  const personajesContados = personajes.length; 
-  return personajesContados; 
+export const contarPersonajesFamilia = (personajes) => {
+  const personajesContados = personajes.length;
+  return personajesContados;
 };
 
 //Funcion de ordenar
@@ -32,9 +31,9 @@ export const sortAz = (data, sortType) => {
 
   })
 
-  if(sortType === ""){ 
+  if (sortType === "") {
     return false
-  } 
+  }
   if (sortType === "AZ") {
     return sortedDate
   } else {
@@ -42,6 +41,7 @@ export const sortAz = (data, sortType) => {
   }
 };
 
+//Funcion buscar
 export function buscarPersonajes(searchValue, data) {
   return data.filter(function (character) {
     const fullNameLowerCase = character.fullName.toLowerCase();

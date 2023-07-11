@@ -1,4 +1,4 @@
-import { filterFamily, contarPersonajesFamilia, sortAz, buscarPersonajes} from './data.js';
+import { filterFamily, contarPersonajesFamilia, sortAz, buscarPersonajes } from './data.js';
 import data from './data/got/got.js';
 
 
@@ -54,7 +54,7 @@ const selectFamily = document.getElementById("family_filter");
 selectFamily.addEventListener("change", function () {
   const family = selectFamily.value;
   document.querySelector(".container_main").innerHTML = '';
-  searchInput.value=""
+  searchInput.value = ""
   if (family !== "all") {
     familiafiltrada = filterFamily(family, data["got"]);
     dibujarPersonajes(familiafiltrada);
@@ -72,7 +72,7 @@ const selectOrder = document.getElementById("alphabetical")
 selectOrder.addEventListener("change", function () {
   const sortType = selectOrder.value;
   const family = selectFamily.value;
-  searchInput.value=""
+  searchInput.value = ""
   document.querySelector(".container_main").innerHTML = '';
   if (sortType === "all") {
     dibujarPersonajes(familiafiltrada);
@@ -86,7 +86,7 @@ selectOrder.addEventListener("change", function () {
     }
     dibujarPersonajes(personajesOrdenados);
   }
-   
+
 
 });
 
@@ -100,8 +100,8 @@ searchInput.addEventListener("input", function () {
 
 });
 
-const buttonHome = document.getElementById ("home")
-buttonHome.addEventListener("click", function() {
+const buttonHome = document.getElementById("home")
+buttonHome.addEventListener("click", function () {
   location.reload()
 
-})
+});
