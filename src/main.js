@@ -1,22 +1,30 @@
-import { filterFamily, contarPersonajesFamilia, sortAz, buscarPersonajes } from './data.js';
+import { filterFamily, contarPersonajesFamilia, sortAz, buscarPersonajes, contarFamilia } from './data.js';
 import data from './data/got/got.js';
 
 
-// manipulacion del DOM
+const containerMain = document.querySelector(".container_main");
+const mensaje = document.getElementById("mensaje");
+const selectFamily = document.getElementById("family_filter");
+const selectOrder = document.getElementById("alphabetical");
+const searchInput = document.getElementById("buscar");
+const buttonHome = document.getElementById("home");
+const botonTabla = document.getElementById("boton_tabla");
+const tablaFamilia = document.getElementById("tabla_container");
+
+
+dibujarPersonajes(data["got"]);
 
 function dibujarPersonajes(datos) {
+  mensaje.innerHTML = "Hay " + contarPersonajesFamilia(datos) + " personajes";
+ 
   datos.forEach(element => {
     createCharacter(element)
-
-
   });
+  
 }
-dibujarPersonajes(data["got"])
-const mensaje = document.getElementById("mensaje");
-mensaje.innerHTML = "Hay " + contarPersonajesFamilia(data["got"]) + " personajes";
 
 
-
+//Funcion crear elemento
 function createElement(elementType, classCss, container) {
   const element = document.createElement(elementType);
   if (classCss !== "") {
@@ -27,8 +35,8 @@ function createElement(elementType, classCss, container) {
   return element;
 }
 
+//Funcion crear personaje
 function createCharacter(element) {
-  const containerMain = document.querySelector(".container_main");
   const divContainer = createElement("div", "container", containerMain);
   const divCharacter = createElement("div", "character", divContainer);
   const divCardFront = createElement("div", "card_front", divCharacter);
@@ -48,32 +56,31 @@ function createCharacter(element) {
 
 }
 
+
 let familiafiltrada = data["got"];
 
-const selectFamily = document.getElementById("family_filter");
+//Select filtrar familia
 selectFamily.addEventListener("change", function () {
   const family = selectFamily.value;
-  document.querySelector(".container_main").innerHTML = '';
+  containerMain.innerHTML = '';
   searchInput.value = ""
   if (family !== "all") {
     familiafiltrada = filterFamily(family, data["got"]);
     dibujarPersonajes(familiafiltrada);
-    mensaje.innerHTML = "Hay " + contarPersonajesFamilia(familiafiltrada) + " personajes";
   } else {
     familiafiltrada = data["got"];
     dibujarPersonajes(data["got"]);
-    mensaje.innerHTML = "Hay " + contarPersonajesFamilia(data["got"]) + " personajes";
   }
 
 });
 
 
-const selectOrder = document.getElementById("alphabetical")
+//Select ordenar
 selectOrder.addEventListener("change", function () {
   const sortType = selectOrder.value;
   const family = selectFamily.value;
   searchInput.value = ""
-  document.querySelector(".container_main").innerHTML = '';
+  containerMain.innerHTML = '';
   if (sortType === "all") {
     dibujarPersonajes(familiafiltrada);
   } else {
@@ -87,21 +94,74 @@ selectOrder.addEventListener("change", function () {
     dibujarPersonajes(personajesOrdenados);
   }
 
-
 });
 
-const searchInput = document.getElementById("buscar");
+//Buscar por nombre
 searchInput.addEventListener("input", function () {
   const searchValue = searchInput.value.toLowerCase();
   const resultadosBusqueda = buscarPersonajes(searchValue, familiafiltrada);
-  document.querySelector(".container_main").innerHTML = '';
+  containerMain.innerHTML = '';
   dibujarPersonajes(resultadosBusqueda);
-  mensaje.innerHTML = "Hay " + contarPersonajesFamilia(resultadosBusqueda) + " personajes";
 
 });
 
-const buttonHome = document.getElementById("home")
+//Boton cargar pagina
 buttonHome.addEventListener("click", function () {
   location.reload()
 
 });
+
+
+// resultadoContador
+const resultadoContador = contarFamilia(data);
+
+//Crear contenido tabla
+tablaFamilia.style.display = "none";
+const cuerpoTabla = document.createElement("tbody");
+
+const tituloFila = document.createElement("tr");
+const tituloFamilia = document.createElement("th");
+tituloFamilia.textContent = "Familia";
+tituloFila.appendChild(tituloFamilia);
+const tituloCantidad = document.createElement("th");
+tituloCantidad.textContent = "Cantidad";
+tituloFila.appendChild(tituloCantidad);
+tablaFamilia.appendChild(tituloFila);
+
+
+for (const f in resultadoContador) {
+  const fila = document.createElement("tr");
+  let td = document.createElement("td")
+
+  td.innerText = f;
+  fila.appendChild(td);
+
+  td = document.createElement("td");
+  td.innerText = resultadoContador[f];
+  fila.appendChild(td);
+
+  cuerpoTabla.appendChild(fila)
+}
+
+tablaFamilia.appendChild(cuerpoTabla);
+
+//Boton tabla
+botonTabla.addEventListener("click", function () {
+  
+  if (tablaFamilia.style.display === "none") {
+    tablaFamilia.style.display = "block";
+  } else {
+    tablaFamilia.style.display = "none";
+  }
+
+});
+
+
+
+
+
+
+
+
+
+

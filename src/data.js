@@ -18,6 +18,7 @@ export const contarPersonajesFamilia = (personajes) => {
   return personajesContados;
 };
 
+
 //Funcion de ordenar
 export const sortAz = (data, sortType) => {
   const sortedDate = data.slice().sort((a, b) => {
@@ -49,3 +50,19 @@ export function buscarPersonajes(searchValue, data) {
   });
 }
 
+
+
+//Contar personajes por familia
+export function contarFamilia(data) {
+  
+  const sumarFamilia = {};
+
+  data.got.forEach(element => {
+    if (sumarFamilia[element.family]) {
+      sumarFamilia[element.family] ++;
+    } else {
+      sumarFamilia[element.family] = 1;
+    }
+  });
+  return sumarFamilia;
+}

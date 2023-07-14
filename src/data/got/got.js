@@ -266,7 +266,7 @@ export default{
       "lastName": "None",
       "fullName": "Gilly",
       "title": "The Rabbit Keeper",
-      "family": "None",
+      "family": "Unknown",
       "imageUrl": "https://thronesapi.com/assets/images/gilly.jpg",
       "born": null
     },
@@ -503,7 +503,7 @@ export default{
       "lastName": "Pycelle",
       "fullName": "Pycelle",
       "title": "Grand Maester of the Seven Kingdoms",
-      "family": "",
+      "family": "Unknown",
       "imageUrl": "https://thronesapi.com/assets/images/pycelle.jpg",
       "born": "216 DC",
       "death": "300 DC"

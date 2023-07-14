@@ -117,9 +117,15 @@ img {
     }
 }
 
+@media (min-width: 1020px) and (max-width:1200px){
+    .item_menu {
+       flex: auto;
+    }
+}
 
 
-.item_menu button,
+
+.item_menu button, 
 input,
 select {
     width: 92%;
@@ -148,3 +154,33 @@ select {
     font-weight: bold;
     box-shadow: 0 5px 10px #000;
 }
+
+
+table {
+    margin: auto;
+    width: 60%;
+    border-spacing: 3px;
+}
+
+tr:hover td{
+	background-color:  #edd9b6;;
+	border-color: #edd9b6;
+}
+
+
+ th, td {
+    width: 25%;
+    text-align: left;
+    border: 1px solid #000;
+    padding: 0.3em;
+    color: #000;
+    background: #e6c58b;
+
+ }
+
+@media (max-width: 1600px) {
+    table {
+        font-size: 25px; 
+    }
+}
+
