@@ -1,19 +1,43 @@
-import { filterFamily, sortAz, contarPersonajesFamilia, buscarPersonajes} from '../src/data.js';
-
-const arrdata = [
-  { fullName: "Daenerys Targaryen", title: "Mother of Dragons", family: "House Targaryen" },
-  { fullName: "Sansa Stark", title: "Lady of Winterfell", family: "House Stark" },
-  { fullName: "Theon Greyjoy", title: "Captain of Sea Bitch", family: "House Greyjoy" },
-  { fullName: "Tyrion Lannister", title: "Hand of the Queen", family: "House Lannister" },
-  { fullName: "Stannis Baratheon", title: "Lord of Dragonstone", family: "House Baratheon" },
-  { fullName: "Margaery Tyrell", title: "Queen of the Seven Kingdoms", family: "House Tyrell"},
-];
+import { filterFamily, sortAz, contarPersonajesFamilia, buscarPersonajes, contarFamilia } from '../src/data.js';
 
 // Pruebas para filterFamily
-describe('filterFamily', () => {  //funcion donde se agrupan las pruebas a realizar
-  it('Debería filtrar la familia Targaryen', () => { //it escribe una prueba individual 
-    const filteredData = filterFamily("House Targaryen", arrdata); // recibe dos argumentos: una descripción de la prueba y una función que contiene el código de la prueba.
-    expect(filteredData).toEqual([ //expect lo q se espera de la prueba debe ser igual al arreglo
+const arrdata = [
+  { 
+    fullName: "Daenerys Targaryen", 
+    title: "Mother of Dragons", 
+    family: "House Targaryen" 
+  },
+  { 
+    fullName: "Sansa Stark", 
+    title: "Lady of Winterfell", 
+    family: "House Stark" 
+  },
+  { 
+    fullName: "Theon Greyjoy", 
+    title: "Captain of Sea Bitch", 
+    family: "House Greyjoy" 
+  },
+  { 
+    fullName: "Tyrion Lannister", 
+    title: "Hand of the Queen", 
+    family: "House Lannister" 
+  },
+  { 
+    fullName: "Stannis Baratheon", 
+    title: "Lord of Dragonstone", 
+    family: "House Baratheon" 
+  },
+  { 
+    fullName: "Margaery Tyrell", 
+    title: "Queen of the Seven Kingdoms", 
+    family: "House Tyrell"
+  },
+];
+
+describe('filterFamily', () => {  
+  it('Debería filtrar la familia Targaryen', () => { 
+    const filteredData = filterFamily("House Targaryen", arrdata); 
+    expect(filteredData).toEqual([
       { fullName: "Daenerys Targaryen", title: "Mother of Dragons", family: "House Targaryen"},
     ]);
   });
@@ -58,6 +82,7 @@ describe('filterFamily', () => {  //funcion donde se agrupan las pruebas a reali
   });
 });
 
+// Pruebas para funcion ordenar
 describe('sortAz', () => {
   const data = [
     {
@@ -133,6 +158,7 @@ describe('sortAz', () => {
   });
 });
 
+// Pruebas para funcion contar 
 describe('contarPersonajesFamilia', () => {
   const data = [
     {
@@ -162,44 +188,39 @@ describe('contarPersonajesFamilia', () => {
     expect(contarPersonajesFamilia(data,"House Targaryen")).toBe(contar1);
   });
 
-});
-
-describe('contarPersonajesFamilia', () => {
-  const data = [
-    {
-      id: 8,
-      fullName: "Jamie Lannister",
-      family: "House Lannister",
-      
-    },
-
-    {
-      id: 9,     
-      fullName: "Cersei Lannister",
-      family: "House Lannister",
-     
-    },
-    {
-      id: 14,
-      fullName: "Tyrion Lannister",
-      family: "House Lannister",
-    },
-    {
-      id: 42,
-      fullName: "Tywin Lannister",
-      family: "House Lannister",
-    }
-
-  ];
-  
-  
   it('contar personajes de la familia lannister', () => {
+    const data2 = [
+      {
+        id: 8,
+        fullName: "Jamie Lannister",
+        family: "House Lannister",
+        
+      },
+  
+      {
+        id: 9,     
+        fullName: "Cersei Lannister",
+        family: "House Lannister",
+       
+      },
+      {
+        id: 14,
+        fullName: "Tyrion Lannister",
+        family: "House Lannister",
+      },
+      {
+        id: 42,
+        fullName: "Tywin Lannister",
+        family: "House Lannister",
+      }
+  
+    ];
     const contar1= 4;
-    expect(contarPersonajesFamilia(data,"House Lannister")).toBe(contar1);
+    expect(contarPersonajesFamilia(data2,"House Lannister")).toBe(contar1);
   });
-
 });
 
+// Prueba para funcion buscar personaje
 const data =  [
   {
     id: 21,
@@ -244,4 +265,35 @@ describe('buscarPersonajes', () => {
     expect(searchData).toEqual(expectedData);
   });
 });
+
+//Prueba para funcion contar personajes tabla
+const tabla = [
+  {
+    id: 12,
+    fullName: "Theon Greyjoy",
+    family: "House Greyjoy",
+  },
+
+  {
+    id: 45,
+    fullName: "Yara Greyjoy",
+    family: "House Greyjoy",
+  },
+
+  {
+    id: 46,
+    fullName: "Euron Greyjoy",
+    family: "House Greyjoy",
+  }
+]
+describe('contarFamilia', () => {
+  it('Deberia contar los personajes por familia', () => {
+    const contar2 = {"House Greyjoy": 3};
+    expect(contarFamilia({ got: tabla }, "House Greyjoy")).toEqual(contar2);
+    
+  });
+});
+
+
+
 
