@@ -13,7 +13,7 @@ export const filterFamily = (family, arrdata) => {
 };
 
 //Contar personajes
-export const contarPersonajesFamilia = (personajes) => {
+export const contarPersonajes = (personajes) => {
   const personajesContados = personajes.length;
   return personajesContados;
 };

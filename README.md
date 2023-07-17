@@ -51,7 +51,7 @@ la interfaz y por qué?**
   - **Javascript**: Para dar funcionalidad a la aplicación.
   - **Jest**: Pruebas unitarias de las funciones implementadas 
   en javascript.
-  ![Pruebas](src/Imagenes/test.JPG)
+  ![Pruebas](src/Imagenes/test.png)
  
  ## 3. Historias de usuario.
   Según la necesidad de los usuarios y entendiendo lo que 
@@ -186,7 +186,7 @@ personajes por nombre, filtra por familia y ordena
 alfabéticamente, la información adicional
 de cada personaje se puede visualizar al pasar el cursor por la imagen de cada 
 uno. 
-[Aquí](https://manuela-hernandez.github.io/DEV009-data-lovers/src/) puedes acceder a la interfaz.
+[Aquí](https://manuela-hernandez.github.io/DEV009-data-lovers/) puedes acceder a la interfaz.
 
 - ### Version movil
 
@@ -197,7 +197,6 @@ https://github.com/LauraJoya19/DEV009-data-lovers/assets/133243351/88233cc5-904b
 
 
 - ### Version Desktop
-
 
 https://github.com/LauraJoya19/DEV009-data-lovers/assets/133243351/b2dbd032-977b-41a7-9ab8-dde50ea86b4c
 

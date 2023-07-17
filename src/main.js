@@ -1,4 +1,4 @@
-import { filterFamily, contarPersonajesFamilia, sortAz, buscarPersonajes, contarFamilia } from './data.js';
+import { filterFamily, contarPersonajes, sortAz, buscarPersonajes, contarFamilia } from './data.js';
 import data from './data/got/got.js';
 
 
@@ -15,7 +15,7 @@ const tablaFamilia = document.getElementById("tabla_container");
 dibujarPersonajes(data["got"]);
 
 function dibujarPersonajes(datos) {
-  mensaje.innerHTML = "Hay " + contarPersonajesFamilia(datos) + " personajes";
+  mensaje.innerHTML = "Hay " + contarPersonajes(datos) + " personajes";
  
   datos.forEach(element => {
     createCharacter(element)
