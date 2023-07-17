@@ -51,7 +51,7 @@ la interfaz y por qué?**
   - **Javascript**: Para dar funcionalidad a la aplicación.
   - **Jest**: Pruebas unitarias de las funciones implementadas 
   en javascript.
-  ![Pruebas](src/Imagenes/Pruebas.png)
+  ![Pruebas](src/Imagenes/test.JPG)
  
  ## 3. Historias de usuario.
   Según la necesidad de los usuarios y entendiendo lo que 
