@@ -188,15 +188,16 @@ de cada personaje se puede visualizar al pasar el cursor por la imagen de cada
 uno. 
 [Aquí](https://manuela-hernandez.github.io/DEV009-data-lovers/) puedes acceder a la interfaz.
 
-- ### Version movil
+- ### Versión móvil
+
+https://github.com/Manuela-Hernandez/DEV009-data-lovers/assets/135163093/74099c01-3e36-44a3-9bab-0246a4a9f127
 
 
-https://github.com/LauraJoya19/DEV009-data-lovers/assets/133243351/88233cc5-904b-4508-903c-a02b30c7fe09
 
 
 
 
-- ### Version Desktop
+- ### Versión Desktop
 
 https://github.com/Manuela-Hernandez/DEV009-data-lovers/assets/135163093/6d5f7e69-fff7-47fb-bddc-cd5a4ae538c4
 
