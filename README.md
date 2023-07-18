@@ -198,7 +198,8 @@ https://github.com/LauraJoya19/DEV009-data-lovers/assets/133243351/88233cc5-904b
 
 - ### Version Desktop
 
-https://github.com/LauraJoya19/DEV009-data-lovers/assets/133243351/b2dbd032-977b-41a7-9ab8-dde50ea86b4c
+https://github.com/Manuela-Hernandez/DEV009-data-lovers/assets/135163093/6d5f7e69-fff7-47fb-bddc-cd5a4ae538c4
+
 
 
 
